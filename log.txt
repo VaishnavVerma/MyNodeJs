@@ -3,3 +3,7 @@
 1704522085276: /far New request received
 1704522361702: /far New request received
 1704522362668: /far New request received
+1704626764748: GET / New request received
+1704626764933: GET /favicon.ico New request received
+1704626799409: GET /about New request received
+1704627103049: GET /about New request received
