@@ -7,3 +7,19 @@
 1704626764933: GET /favicon.ico New request received
 1704626799409: GET /about New request received
 1704627103049: GET /about New request received
+// Version 
+
+4.18.2
+
+1st part -> 4
+2nd part -> 18
+3rd part -> 2
+
+// 3rd Part (Last Part) - Minor fixes (optional update)
+latest -> 4.18.5
+
+// 2nd Part (Recommended Bug fix)
+latest -> 4.19.0
+
+// 1st major Release - Major / Breaking update
+latest -> 5.0.0
