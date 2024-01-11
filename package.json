@@ -4,7 +4,7 @@
   "description": "",
   "main": "hello.js",
   "scripts": {
-    "start": "node index"
+    "index": "node index"
   },
   "author": "",
   "license": "ISC",
