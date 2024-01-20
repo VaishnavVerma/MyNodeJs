@@ -52,8 +52,6 @@
 // PUT req - ex. for uploading photos
 // PATCH req - for changing somthing in database
 // DELETE req - IF you want to delete somthing from database
-
-
 // after importing express not we can make our work easier 
 
 
