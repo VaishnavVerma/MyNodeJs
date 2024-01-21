@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Node.js Server</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header a {
+            text-decoration: none;
+            color: white;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+
+        .logo {
+            font-size: 1.5em;
+            margin: 0 15px;
+        }
+
+        .about a {
+            text-decoration: none;
+            color: #ffcc00;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+
+        .social-button {
+            background-color: #ffcc00;
+            color: #333;
+            padding: 8px 12px;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .social-icons {
+            display: none;
+            position: absolute;
+            background-color: #333;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            flex-direction: column;
+            align-items: flex-start;
+            z-index: 1;
+        }
+
+        .social-icons a {
+            text-decoration: none;
+            color: white;
+            padding: 10px;
+            display: block;
+        }
+
+        /* Additions for new sections */
+        nav {
+            display: flex;
+            background-color: #555;
+            padding: 10px;
+            justify-content: space-around;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            margin: 0 10px;
+        }
+        main {
+            max-width: 800px;
+            margin: 20px auto;
+        }
+
+        .news-item {
+            border-bottom: 1px solid #ccc;
+            padding: 10px 0;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .news-item a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        .rank {
+            font-size: 18px;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        .title {
+            flex-grow: 1;
+            margin-right: 10px;
+        }
+
+        .source {
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="#">Home</a>
+        <div class="logo">Hello</div>
+        <div class="about"><a href="about.html">About</a></div>
+        <button class="social-button" onclick="toggleSocialIcons()">Social</button>
+        <div class="social-icons" id="socialIcons">
+            <a href="https://www.facebook.com/your-page" target="_blank">Facebook</a>
+            <a href="https://twitter.com/your-handle" target="_blank">Twitter</a>
+            <a href="https://www.instagram.com/your-account" target="_blank">Instagram</a>
+        </div>
+    </header>
+
+    <!-- New Sections -->
+    <nav>
+        <a href="https://news.ycombinator.com/" target="_blank">New</a>
+        <a href="https://www.threads.net/login" target="_blank">Threads</a>
+        <a href="https://instagram.com/" target="_blank">Ask</a>
+        <a href="#">Show</a>
+        <a href="https://www.naukri.com/" target="_blank">Job</a>
+    </nav>
+    <main>
+        <div class="news-item">
+            <span class="rank"> 01.</span>
+            <a href="#" class="title">Exciting Discovery on Sharedrop.io</a>
+            <span class="source">(https://www.sharedrop.io/)</span>
+        </div>
+        
+        <div class="news-item">
+            <span class="rank">02.</span>
+            <a href="#" class="title">Auction Buzz on Ubidrop.com</a>
+            <span class="source">(https://www.ubidrop.com/)</span>
+        </div>
+        
+        <div class="news-item">
+            <span class="rank"> 03.</span>
+            <a href="https://hboehm.info/gc/" class="title">Insights into Garbage Collection by Hans-J. Boehm</a>
+            <span class="source">(third-source.com)</span>
+        </div>
+        
+        <div class="news-item">
+            <span class="rank"> 04.</span>
+            <a href="https://hackaday.com/2024/01/15/solar-chimneys-viable-energy-solution-or-a-lot-of-hot-air/" class="title">Debunking Myths: Solar Chimneys as an Energy Solution</a>
+            <span class="source">(fourth-source.com)</span>
+        </div>
+        
+        <div class="news-item">
+            <span class="rank"> 05.</span>
+            <a href="https://www.newyorker.com/magazine/2024/01/29/the-woman-who-spent-five-hundred-days-in-a-cave" class="title">Extraordinary Journey: 500 Days in a Cave</a>
+            <span class="source">(fifth-source.com)</span>
+        </div>
+        
+        <div class="news-item">
+            <span class="rank"> 06.</span>
+            <a href="http://www.textfiles.com/index.html" class="title">Exploring the Textfiles Archive</a>
+            <span class="source">(sixth-source.com)</span>
+        </div>
+        
+        <div class="news-item">
+            <span class="rank"> 07.</span>
+            <a href="https://www.jeffreythompson.org/collision-detection/index.php" class="title">Mastering Collision Detection with Jeffrey Thompson</a>
+            <span class="source">(seventh-source.com)</span>
+        </div>
+        
+        <div class="news-item">
+            <span class="rank"> 08.</span>
+            <a href="https://github.com/codesoap/pfuzz" class="title">Unveiling PFUZZ - Fuzzing Framework</a>
+            <span class="source">(eighth-source.com)</span>
+        </div>
+        
+        <div class="news-item">
+            <span class="rank"> 09.</span>
+            <a href="#" class="title">Innovative News Topic 9</a>
+            <span class="source">(ninth-source.com)</span>
+        </div>
+        
+        <div class="news-item">
+            <span class="rank">10.</span>
+            <a href="#" class="title">Top Stories on Tenth-Source.com</a>
+            <span class="source">(tenth-source.com)</span>
+        </div>
+        
+        <div class="news-item">
+            <span class="rank">11.</span>
+            <a href="https://www.wikipedia.org/" class="title">Exploring the Depths of Wikipedia</a>
+            <span class="source">(reliable-source.com)</span>
+        </div>
+        
+        <div class="news-item">
+            <span class="rank">12.</span>
+            <a href="https://www.cnn.com/" class="title">CNN's Latest Headlines</a>
+            <span class="source">(trusted-source.com)</span>
+        </div>
+        
+        <div class="news-item">
+            <span class="rank">13.</span>
+            <a href="https://www.nasa.gov/" class="title">NASA's Space Exploration Updates</a>
+            <span class="source">(space-exploration-source.com)</span>
+        </div>
+        
+        <div class="news-item">
+            <span class="rank">14.</span>
+            <a href="https://www.nytimes.com/" class="title">The New York Times: Journalism Excellence</a>
+            <span class="source">(journalism-excellence-source.com)</span>
+        </div>
+        
+        
+    
+        
+    
+    </main>
+    
+
+<script>
+    function toggleSocialIcons() {
+        var socialIcons = document.getElementById("socialIcons");
+        socialIcons.style.display = (socialIcons.style.display === "block") ? "none" : "block";
+    }
+</script>
+
+</body>
+</html>
