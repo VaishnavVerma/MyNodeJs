@@ -231,10 +231,55 @@
 
 <script>
     function toggleSocialIcons() {
-        var socialIcons = document.getElementById("socialIcons");
-        socialIcons.style.display = (socialIcons.style.display === "block") ? "none" : "block";
-    }
-</script>
+            var socialIcons = document.getElementById("socialIcons");
 
+            // Toggle display
+            socialIcons.style.display = (socialIcons.style.display === "block") ? "none" : "block";
+
+            // Center the dialog box
+            if (socialIcons.style.display === "block") {
+                centerDialogBox(socialIcons);
+            }
+        }
+
+        function centerDialogBox(dialogBox) {
+            // Get the dimensions of the viewport
+            var viewportWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+            var viewportHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+
+            // Get the dimensions of the dialog box
+            var dialogWidth = dialogBox.offsetWidth;
+            var dialogHeight = dialogBox.offsetHeight;
+
+            // Calculate the position to center the dialog box
+            var leftPosition = (viewportWidth - dialogWidth) / 2;
+            var topPosition = (viewportHeight - dialogHeight) / 2;
+
+            // Set the position of the dialog box
+            dialogBox.style.left = leftPosition + "px";
+            dialogBox.style.top = topPosition + "px";
+        }
+
+        // Call the centerDialogBox function when the window is resized
+        window.addEventListener("resize", function() {
+            var socialIcons = document.getElementById("socialIcons");
+
+            // Check if the dialog box is visible
+            if (socialIcons.style.display === "block") {
+                centerDialogBox(socialIcons);
+            }
+        });
+
+        // Call the centerDialogBox function when the page is loaded
+        window.addEventListener("load", function() {
+            var socialIcons = document.getElementById("socialIcons");
+
+            // Check if the dialog box is visible
+            if (socialIcons.style.display === "block") {
+                centerDialogBox(socialIcons);
+            }
+        });
+
+</script>
 </body>
 </html>
